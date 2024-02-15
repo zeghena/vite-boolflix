@@ -4,14 +4,16 @@ export default {
   data() {
     return {
       store,
-      title: "Messaggio urgente",
     };
   },
 };
 </script>
 
 <template>
-  <h1>{{ title }}</h1>
+  <div class="container mt-5">
+    <input type="text" class="form-control" />
+    <button class="btn btn-primary"></button>
+  </div>
 </template>
 
 <style lang="scss">
