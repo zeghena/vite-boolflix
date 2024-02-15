@@ -1,14 +1,8 @@
 <script>
-export default {
-  props: { obj: Object },
-};
+export default {};
 </script>
 
-<template>
-  <h4 v-if="obj.titolo != '22'" :class="obj.numero > 4 ? 'red' : ''">
-    {{ obj.numero + 1 }} {{ obj.titolo }}
-  </h4>
-</template>
+<template></template>
 
 <style scoped>
 .red {
