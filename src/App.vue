@@ -10,9 +10,16 @@ export default {
   },
   methods: {
     performSearch() {
-      axios.get("...").then((response) => {
-        console.log(response.data);
-      });
+      axios
+        .get("https://api.themoviedb.org/3/search/movie", {
+          params: {
+            api_key: "eea25a56cc9e118410332122c6687028",
+            query: searchedTerm,
+          },
+        })
+        .then((response) => {
+          console.log(response.data);
+        });
     },
   },
 };
