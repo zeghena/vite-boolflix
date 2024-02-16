@@ -6,6 +6,7 @@ export default {
     return {
       // store,
       searchedTerm: "ciao",
+      movies: [],
     };
   },
   methods: {
@@ -15,11 +16,12 @@ export default {
           params: {
             // api_key: "eea25a56cc9e118410332122c6687028",
             api_key: "3eaba1ac85ce1e4f8d358abb6cdcd712",
-            query: searchedTerm,
+            query: this.searchedTerm,
           },
         })
         .then((response) => {
-          console.log(response.data);
+          console.log(response.data.results);
+          this.movies = response.data.results;
         });
     },
   },
@@ -37,6 +39,7 @@ export default {
       />
       <button class="btn btn-primary" @click="performSearch()">Ricerca</button>
     </div>
+    <div v-for="movie in movies">{{ movie.original_title }}</div>
   </div>
 </template>
 
